@@ -1,0 +1,47 @@
+<!-- <div>
+    <input [(ngModel)]="newAppointmentTitle" placeholder="Appointment Description">
+    <input [(ngModel)]="newAppointmentDate" type="date" placeholder="Appointment Date">
+    <button (click)="addAppointment()">Add</button>
+</div> -->
+
+
+<!-- ngFor and a way to get the index while traversing the loop -->
+<!-- <div>
+    <ul>
+        <li *ngFor="let appointment of appointments; index as i">
+            {{appointment.title}} {{appointment.date | date:'dd.MM.yyyy'}}
+            <button (click)="deleteAppointment(i)">Delete</button>
+        </li>
+    </ul>
+</div> -->
+
+<!-- Bootstrapping the above html -->
+<div class="container">
+    <div class="card mt-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center pt-2">Create New Appointment</h2>
+            </div>
+        </div>
+        <div class="row mt-3 p-2">
+            <div class="col-md-6">
+                <input class="form-control" [(ngModel)]="newAppointmentTitle" placeholder="Appointment Description">
+            </div>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="newAppointmentDate" type="date" placeholder="Appointment Date">
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100" (click)="addAppointment()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mt-5">Appointments</h2>
+    <ul class="list-group mt-3">
+        <!-- ngFor and a way to get the index while traversing the loop -->
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let appointment of appointments; index as i">
+            {{appointment.title}} {{appointment.date | date:'dd.MM.yyyy'}}
+            <button class="btn btn-danger" (click)="deleteAppointment(i)">Delete</button>
+        </li>
+    </ul>
+</div>
